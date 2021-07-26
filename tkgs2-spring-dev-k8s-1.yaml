@@ -40,7 +40,7 @@ spec:
       storageClass: standard
     workers:
       class: best-effort-medium
-      count: 2
+      count: 1
       storageClass: standard
 status:
   addons:
