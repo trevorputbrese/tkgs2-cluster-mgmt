@@ -1,0 +1,102 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1
+kind: TanzuKubernetesCluster
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"run.tanzu.vmware.com/v1alpha1","kind":"TanzuKubernetesCluster","metadata":{"annotations":{},"name":"tkgs2-spring-dev-k8s-1","namespace":"tkgs2-spring-dev-team-ns"},"spec":{"distribution":{"version":"v1.19"},"settings":{"network":{"cni":{"name":"antrea"},"pods":{"cidrBlocks":["192.1.0.0/16"]},"services":{"cidrBlocks":["198.101.0.0/16"]}},"storage":{"defaultClass":"standard"}},"topology":{"controlPlane":{"class":"best-effort-medium","count":1,"storageClass":"standard"},"workers":{"class":"best-effort-medium","count":1,"storageClass":"standard"}}}}
+    run.tanzu.vmware.com/tmc-already-attached: "true"
+  creationTimestamp: "2021-05-05T23:16:38Z"
+  finalizers:
+  - tanzukubernetescluster.run.tanzu.vmware.com
+  generation: 1
+  labels:
+    run.tanzu.vmware.com/tkr: v1.19.7---vmware.1-tkg.1.fc82c41
+  name: tkgs2-spring-dev-k8s-1
+  namespace: tkgs2-spring-dev-team-ns
+  resourceVersion: "84321617"
+  selfLink: /apis/run.tanzu.vmware.com/v1alpha1/namespaces/tkgs2-spring-dev-team-ns/tanzukubernetesclusters/tkgs2-spring-dev-k8s-1
+  uid: 4e1ead24-5ea1-4c5f-86bb-2d26f7a2b1d1
+spec:
+  distribution:
+    fullVersion: v1.19.7+vmware.1-tkg.1.fc82c41
+    version: v1.19
+  settings:
+    network:
+      cni:
+        name: antrea
+      pods:
+        cidrBlocks:
+        - 192.1.0.0/16
+      serviceDomain: cluster.local
+      services:
+        cidrBlocks:
+        - 198.101.0.0/16
+    storage:
+      defaultClass: standard
+  topology:
+    controlPlane:
+      class: best-effort-medium
+      count: 1
+      storageClass: standard
+    workers:
+      class: best-effort-medium
+      count: 2
+      storageClass: standard
+status:
+  addons:
+    authsvc:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:53Z"
+        status: "True"
+        type: AuthServiceProvisioned
+      name: authsvc
+      status: applied
+      version: 0.1-67-gb9aa0d3
+    cloudprovider:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:30Z"
+        status: "True"
+        type: CPIProvisioned
+      name: vmware-guest-cluster
+      status: applied
+      version: 0.1-87-gb6bb261
+    cni:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:45Z"
+        status: "True"
+        type: CNIProvisioned
+      name: antrea
+      status: applied
+      version: v0.10.2_vmware.3
+    csi:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:32Z"
+        status: "True"
+        type: CSIProvisioned
+      name: pvcsi
+      status: applied
+      version: vsphere70u2-d6e465b-19a4c91
+    dns:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:27Z"
+        status: "True"
+        type: CoreDNSProvisioned
+      name: CoreDNS
+      status: applied
+      version: v1.7.0_vmware.7
+    proxy:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:27Z"
+        status: "True"
+        type: KubeProxyProvisioned
+      name: kube-proxy
+      status: applied
+      version: 1.19.7+vmware.1
+    psp:
+      conditions:
+      - lastTransitionTime: "2021-05-05T23:19:26Z"
+        status: "True"
+        type: PSPProvisioned
+      name: defaultpsp
+      status: applied
+      version: v1.19.7+vmware.1-tkg.1.fc82c41
