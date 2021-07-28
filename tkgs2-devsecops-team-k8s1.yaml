@@ -9,7 +9,7 @@ spec:
   topology:
     controlPlane:
       count: 1                                 #number of control plane nodes
-      class:best-effort-xsmall                 #vmclass for control plane nodes
+      class: best-effort-xsmall                 #vmclass for control plane nodes
       storageClass: standard         #storageclass for control plane
     workers:
       count: 1                                 #number of worker nodes
