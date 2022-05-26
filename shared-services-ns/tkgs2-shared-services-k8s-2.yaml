@@ -1,8 +1,8 @@
 apiVersion: run.tanzu.vmware.com/v1alpha2
 kind: TanzuKubernetesCluster
 metadata:
-  name: tkgs2-shared-services-k8s-2
-  namespace: shared-services-ns
+  name: tkgs2-atos-cluster-k8s-1
+  namespace: atos-tenant-1
 spec:
   topology:
     controlPlane:
