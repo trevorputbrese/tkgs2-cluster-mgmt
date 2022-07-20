@@ -1,0 +1,22 @@
+apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: fema-devops-cluster-1
+  namespace: fema-devops-team
+spec:
+  topology:
+    controlPlane:
+      replicas: 1
+      vmClass: guaranteed-small
+      storageClass: vsan-default-storage-policy
+      tkr:  
+        reference:
+          name: 1.21.6+vmware.1-tkg.1 
+    nodePools:
+    - name: worker-nodepool-a1
+      replicas: 1
+      vmClass: guaranteed-small
+      storageClass: vsan-default-storage-policy
+      tkr:  
+        reference:
+          name: 1.21.6+vmware.1-tkg.1 
